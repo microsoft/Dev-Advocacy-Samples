@@ -10,9 +10,8 @@ Using the pen to annotate code on the Surface
 
 ## Contents
 Each sample has a README page with a set of instructions that will walk you through the demo. The instructions include:
-- Prerequisites - System requirements and downloads
-- Tutorial - Steps walking through a simple end-to-end demo that takes less than 10 minutes
-- Tutorial++ - Steps walking through a more complex tutorial that builds on the previous. This portion may take around 20 minutes to complete.
+- Prerequisites - System requirements and download instructions.
+- Tutorial - Steps walking through a simple end-to-end demo that takes between 10-20 minutes.
 - Next Steps - Links to resources on the tutorial topic and associated GitHub repositories.
 
 ## Contributing
