@@ -10,10 +10,10 @@ Using the pen to annotate code on the Surface
 
 ## Contents
 Each sample has a README page with a set of instructions that will walk you through the demo. The instructions include:
-Prerequisites - System requirements and downloads
-Tutorial - Steps walking through a simple end-to-end demo that takes less than 10 minutes
-Tutorial++ - Steps walking through a more complex tutorial that builds on the previous. This portion may take around 20 minutes to complete.
-Next Steps - Links to resources on the tutorial topic and associated GitHub repositories.
+- Prerequisites - System requirements and downloads
+- Tutorial - Steps walking through a simple end-to-end demo that takes less than 10 minutes
+- Tutorial++ - Steps walking through a more complex tutorial that builds on the previous. This portion may take around 20 minutes to complete.
+- Next Steps - Links to resources on the tutorial topic and associated GitHub repositories.
 
 ## Contributing
 To work in GitHub, go to https://github.com/microsoft/dev-advocacy-samples and fork the repository. Work in your own fork and when you are ready to submit to make a change or publish your sample for the first time, submit a pull request into the master branch of dev-advocacy-samples. One of the approvers will review your request and accept or reject the pull request.
