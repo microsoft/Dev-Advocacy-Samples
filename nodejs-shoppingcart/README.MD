@@ -1,4 +1,4 @@
-# Node.js demo app for using VS Code + WSL on Windows 10.
+# Node.js app for using VS Code + WSL on Windows 10
 
 This app is a simple shopping cart implemented using NodeJS, Express, Express-Session and Express handlebars (hbs). The project is originally from https://github.com/gtsopour/nodejs-shopping-cart and is licensed under **MIT**.
 
