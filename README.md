@@ -10,6 +10,7 @@ The samples showcase a variety of topics including:
 
 ## Contents
 Each sample has a README page with a set of instructions that will walk you through the tutorial. The instructions include:
+- Story - Tutorial objective
 - Prerequisites - System requirements and download instructions.
 - Tutorial - Steps walking through a simple end-to-end demo that takes between 10-20 minutes.
 - Next Steps - Links to resources on the tutorial topic and associated GitHub repositories.
