@@ -9,35 +9,36 @@ In addition, you can highlight the debugger and integrated terminal functionalit
 
 Lastly we also included a workspace recommendation that enables you to install the Azure App Service extension for VS Code that allows easy deployment to Azure (from within VS Code). See #Azure section for more details.
 
-## Get started
-
+## Prerequisites
 1. Install Visual Studio Code for Windows [here](https://code.visualstudio.com/Download) 
 2. Make sure WSL is set up on your machine. You can follow the installation instructions [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 3. You need to have installed Node and NPM. See https://gist.github.com/micahgodbolt/8b9a338c8bab7bc147975646ea20826c
-4. Clone this repository
+
+## Tutorial
+1. Clone this repository
 
 ``` shell
 git clone https://github.com/Microsoft/Dev-Advocacy-Samples.git
 ```
 
-5. Go to `/nodejs-shoppingcart`
+2. Go to `/nodejs-shoppingcart`
 
-6. Install dependencies
+3. Install dependencies
 ``` shell
 npm install
 ```
 
-7. Open this folder in VS Code from your bash terminal
+4. Open this folder in VS Code from your bash terminal
 ``` shell
 code .
 ```
 
-8. Open the Integrated Terminal in VS Code (make sure it's using bash/wsl) and start the node server
+5. Open the Integrated Terminal in VS Code (make sure it's using bash/wsl) and start the node server
 ``` shell
 npm start
 ```
 
-9. Visit the app on `http://localhost:3000`.
+6. Visit the app on `http://localhost:3000`.
 
 ## Debugging
 To debug the Node app running within WSL, we have included a `launch.json` that contains a debug configuration that's launching the Node process for you. This means taht you have to stop/kill the existing Node process that you may have started from the integrated terminal. The debug configuration works by running `npm run debug`, which is a predefine npm script in the `package.json` which starts the node process with the debug `--inspect` flag. Notice that the `useWSL` property is set too, and this tells VS Code to use WSL, so the launched Node process runs within WSL and not Windows.
@@ -45,7 +46,7 @@ To debug the Node app running within WSL, we have included a `launch.json` that 
 To start debugging simply go to the Debug section and select the `Launch NPM debug` config, and you should see your Node process start. From here you can go to `routes/index.js` and set breakpoints in the event handler.
 
 
-## Azure
+## Azure & Next Steps
 We also included a workspace recommendation that enables you to install the [Azure App Service extension for VS Code](vscode:extension/ms-azuretools.vscode-azureappservice), that allows easy deployment to Azure (from within VS Code). 
 
 See this in depth tutorial for how to get started with App Service and VS Code: https://code.visualstudio.com/tutorials/app-service-extension/getting-started
