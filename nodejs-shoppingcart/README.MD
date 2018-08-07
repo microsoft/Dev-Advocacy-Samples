@@ -33,7 +33,7 @@ npm install
 code .
 ```
 
-5. Open the Integrated Terminal in VS Code (make sure it's using bash/wsl) and start the node server
+5. Open the Integrated Terminal in VS Code (make sure it's using bash/wsl). You can set your default shell by using the command palette (Ctrl + Shift + P) and typing "Terminal: Select Default Shell." From there select "WSL Bash." Now start the node server:
 ``` shell
 npm start
 ```
@@ -41,7 +41,7 @@ npm start
 6. Visit the app on `http://localhost:3000`.
 
 ## Debugging
-To debug the Node app running within WSL, we have included a `launch.json` that contains a debug configuration that's launching the Node process for you. This means taht you have to stop/kill the existing Node process that you may have started from the integrated terminal. The debug configuration works by running `npm run debug`, which is a predefine npm script in the `package.json` which starts the node process with the debug `--inspect` flag. Notice that the `useWSL` property is set too, and this tells VS Code to use WSL, so the launched Node process runs within WSL and not Windows.
+To debug the Node app running within WSL, we have included a `launch.json` that contains a debug configuration that's launching the Node process for you. This means that you have to stop/kill the existing Node process that you may have started from the integrated terminal. The debug configuration works by running `npm run debug`, which is a predefine npm script in the `package.json` which starts the node process with the debug `--inspect` flag. Notice that the `useWSL` property is set too, and this tells VS Code to use WSL, so the launched Node process runs within WSL and not Windows.
 
 To start debugging simply go to the Debug section and select the `Launch NPM debug` config, and you should see your Node process start. From here you can go to `routes/index.js` and set breakpoints in the event handler.
 
