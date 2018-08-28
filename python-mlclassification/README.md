@@ -12,7 +12,7 @@ You can complete the first three steps of this tutorial with one click by using 
 
         $ sudo apt-get update
 
-3. Install Visual Studio Code.
+3. [Install Visual Studio Code for Windows](https://code.visualstudio.com/Download).
 4. Install Python and pip.
     - In your Ubuntu terminal type:
     
