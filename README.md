@@ -4,9 +4,9 @@ This GitHub repository contains code samples that demonstrate how you can use Wi
 ## Samples
 The samples showcase a variety of topics including:
 
-- [App development with Node.js using VS Code and the Windows Subsystem for Linux (WSL)](https://github.com/Microsoft/Dev-Advocacy-Samples/tree/master/nodejs-shoppingcart)
-- [Machine learning with Python using WSL](https://github.com/Microsoft/Dev-Advocacy-Samples/tree/master/python-mlclassification)
-- [Setting up your developer machine](https://github.com/Microsoft/windows-dev-box-setup-scripts)
+- Tutorial: [App development with Node.js using VS Code and the Windows Subsystem for Linux (WSL)](https://github.com/Microsoft/Dev-Advocacy-Samples/tree/master/nodejs-shoppingcart)
+- Tutuorial: [Machine learning with Python using WSL](https://github.com/Microsoft/Dev-Advocacy-Samples/tree/master/python-mlclassification)
+- Tool: [Setting up your developer machine](https://github.com/Microsoft/windows-dev-box-setup-scripts)
 
 ## Contents
 Each sample has a README page with a set of instructions that will walk you through the tutorial. The instructions include:
