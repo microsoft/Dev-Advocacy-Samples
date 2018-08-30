@@ -28,7 +28,7 @@ function executeScript {
 #--- Enable developer mode on the system ---
 # Set-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion\AppModelUnlock -Name AllowDevelopmentWithoutDevLicense -Value 1
 choco install -y vscode
-choco install -y Microsoft-Windows-Subsystem-Linux -source windowsfeatures
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 #--- Ubuntu ---
 Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile ~/Ubuntu.appx -UseBasicParsing
 Add-AppxPackage -Path ~/Ubuntu.appx
