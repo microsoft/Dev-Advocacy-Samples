@@ -6,7 +6,7 @@ The samples showcase a variety of topics including:
 
 - Tutorial: [App development with Node.js using VS Code and the Windows Subsystem for Linux (WSL)](https://github.com/Microsoft/Dev-Advocacy-Samples/tree/master/nodejs-shoppingcart)
 - Tutuorial: [Machine learning with Python using WSL](https://github.com/Microsoft/Dev-Advocacy-Samples/tree/master/python-mlclassification)
-- Tool: [Setting up your developer machine](https://github.com/Microsoft/windows-dev-box-setup-scripts)
+- Tool:[One-click developer machine setup](http://boxstarter.org/package/url?https://raw.githubusercontent.com/Microsoft/Dev-Advocacy-Samples/master/dev_setup.ps1)
 
 ## Contents
 Each sample has a README page with a set of instructions that will walk you through the tutorial. The instructions include:
