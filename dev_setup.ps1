@@ -27,7 +27,6 @@ function executeScript {
 
 #--- Enable developer mode on the system ---
 # Set-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion\AppModelUnlock -Name AllowDevelopmentWithoutDevLicense -Value 1
-choco install -y vscode
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 #--- Ubuntu ---
 Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile ~/Ubuntu.appx -UseBasicParsing
@@ -55,6 +54,8 @@ Ubuntu1804 run curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6
 # Restart needed?
 Ubuntu1804 run nvm install node
 write-host "Finished installing tools inside the WSL distro"
+
+choco install -y vscode
 
 Enable-UAC
 Enable-MicrosoftUpdate
