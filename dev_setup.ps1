@@ -4,29 +4,6 @@
 
 Disable-UAC
 
-# Get the base URI path from the ScriptToCall value
-$bstrappackage = "-bootstrapPackage"
-$Boxstarter | Foreach-Object { write-host "The key name is $_.Key and value is $_.Value"  }
-$helperUri = $Boxstarter['ScriptToCall']
-write-host "ScriptToCall is $helperUri"
-$strpos = $helperUri.IndexOf($bstrappackage)
-$helperUri = $helperUri.Substring($strpos + $bstrappackage.Length)
-$helperUri = $helperUri.TrimStart("'", " ")
-$helperUri = $helperUri.TrimEnd("'", " ")
-$helperUri = $helperUri.Substring(0, $helperUri.LastIndexOf("/"))
-$helperUri += "/scripts"
-write-host "helper script base URI is $helperUri"
-
-function executeScript {
-    Param ([string]$script)
-    write-host "executing $helperUri/$script ..."
-	iex ((new-object net.webclient).DownloadString("$helperUri/$script"))
-}
-
-# see if we can't get calling URL somehow, that would eliminate this need
-
-# should move to a config file
-
 $user = "Microsoft";
 $baseBranch = "master";
 $finalBaseHelperUri = "https://raw.githubusercontent.com/$user/Dev-Advocacy-Samples/$baseBranch/scripts";
@@ -34,6 +11,8 @@ $finalBaseHelperUri = "https://raw.githubusercontent.com/$user/Dev-Advocacy-Samp
 #--- Dev tools ---
 write-host "Downloading VS Code ..."
 choco install -y vscode
+write-host "Downloading git ..."
+choco install -y git -params '"/GitAndUnixToolsOnPath /WindowsTerminal"'
 write-host "Enabling WSL ..."
 choco install -y Microsoft-Windows-Subsystem-Linux -source windowsfeatures
 #--- Ubuntu ---
