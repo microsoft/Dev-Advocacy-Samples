@@ -23,19 +23,27 @@ function executeScript {
 	iex ((new-object net.webclient).DownloadString("$helperUri/$script"))
 }
 
-#--- Setting up Windows ---
+# see if we can't get calling URL somehow, that would eliminate this need
 
-#--- Enable developer mode on the system ---
-# Set-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion\AppModelUnlock -Name AllowDevelopmentWithoutDevLicense -Value 1
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+# should move to a config file
+
+$user = "Microsoft";
+$baseBranch = "master";
+$finalBaseHelperUri = "https://raw.githubusercontent.com/$user/Dev-Advocacy-Samples/$baseBranch/scripts";
+
+#--- Dev tools ---
+write-host "Downloading VS Code ..."
+choco install -y vscode
+write-host "Enabling WSL ..."
+choco install -y Microsoft-Windows-Subsystem-Linux -source windowsfeatures
 #--- Ubuntu ---
+write-host "Installing Ubuntu 18.04 ..."
 Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile ~/Ubuntu.appx -UseBasicParsing
 Add-AppxPackage -Path ~/Ubuntu.appx
 # run the distro once and have it install locally with a blank root user
 Ubuntu1804 install --root
 
 write-host "Downloading Python ML samples to your desktop ..."
-
 Update-SessionEnvironment
 cd $env:USERPROFILE\desktop
 git clone https://github.com/Microsoft/Dev-Advocacy-Samples
@@ -48,14 +56,6 @@ Ubuntu1804 run apt upgrade -y
 Ubuntu1804 run apt install python3 python-pip -y 
 Ubuntu1804 run apt install python-numpy python-scipy pandas -y
 Ubuntu1804 run pip install -U scikit-learn
-## Node tools
-Ubuntu1804 run touch ~/.bashrc
-Ubuntu1804 run curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
-# Restart needed?
-Ubuntu1804 run nvm install node
-write-host "Finished installing tools inside the WSL distro"
-
-choco install -y vscode
 
 Enable-UAC
 Enable-MicrosoftUpdate
