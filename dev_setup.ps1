@@ -43,20 +43,6 @@ Add-AppxPackage -Path ~/Ubuntu.appx
 # run the distro once and have it install locally with a blank root user
 Ubuntu1804 install --root
 
-write-host "Downloading Python ML samples to your desktop ..."
-Update-SessionEnvironment
-cd $env:USERPROFILE\desktop
-git clone https://github.com/Microsoft/Dev-Advocacy-Samples
-
-# TODO: now install additional ML tools inside the WSL distro once default user w/blank password is working
-write-host "Installing tools inside the WSL distro..."
-Ubuntu1804 run apt update
-Ubuntu1804 run apt upgrade -y
-## Python tools
-Ubuntu1804 run apt install python3 python-pip -y 
-Ubuntu1804 run apt install python-numpy python-scipy pandas -y
-Ubuntu1804 run pip install -U scikit-learn
-
 Enable-UAC
 Enable-MicrosoftUpdate
 Install-WindowsUpdate -acceptEula
