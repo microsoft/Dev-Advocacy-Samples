@@ -34,7 +34,7 @@ Ubuntu1804 run apt upgrade -y
 ## Python tools
 Ubuntu1804 run apt install python3 python-pip -y 
 Ubuntu1804 run apt install python-numpy python-scipy pandas -y
-Ubuntu1804 run pip install -U scikit-learn
+# Ubuntu1804 run pip install -U scikit-learn
 
 Enable-UAC
 Enable-MicrosoftUpdate
