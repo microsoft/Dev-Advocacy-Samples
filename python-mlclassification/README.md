@@ -49,6 +49,7 @@ Create a user called 'ubuntu' that you will use throughout this tutorial. In you
         # Add 'ubuntu' to the sudo user group
         $ sudo adduser ubuntu sudo
         $ su - ubuntu
+Note that when you create the user you will be promted for a password. Go ahead and create one. You'll also be propted for a few other details. You can skip filling those in by pressing "Enter".
 
 ### Download and Navigate to the scikit-learn datasets
 First, you'll want to begin working with the scikit-learn sample data sets. Install scikit-learn by typing the following into your Ubuntu 18.04 terminal:
@@ -61,7 +62,7 @@ To navigate your dataset in WSL you'll need to be in the proper directory. You c
 
         $ cd ubuntu
 
-        $ cd .local/lib/python2.7/site-packages/sklearn/datasets/data
+        $ cd /usr/local/lib/python2.7/dist-packages/sklearn/datasets/data
 
 <Ubuntu username> will be the username that you set up when you initially installed Ubuntu.
 
