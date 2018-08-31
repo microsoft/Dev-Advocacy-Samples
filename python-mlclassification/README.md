@@ -5,7 +5,9 @@ This tutorial is a simple machine learning classification tutorial using Python,
 This demo will showcase how students can build a predictive model for machine learning classification using Python and the Windows Subsystem for Linux. They can use the popular scikit-learn toolset to build a model that uses flower iris data to classify the species type. Students can easily get started with machine learning in Linux on Windows using the Windows Subsystem for Linux with Ubuntu's command line Python interpreter.
 
 ## Prerequisites
-You can complete the first three steps of this tutorial with one click by using this [Machine Learning Linux for Windows](http://boxstarter.org/package/url?https://raw.githubusercontent.com/Microsoft/Dev-Advocacy-Samples/master/dev_setup.ps1) setup script based on the [Windows Dev Box Setup Scripts](https://github.com/Microsoft/windows-dev-box-setup-scripts) project. Alternatively, follow these steps below. Note, that after running the one-click script you'll need to restart your machine before proceeding to step 4.
+You can install the tools you'll need for this tutorial with one click by using the [Machine Learning Linux for Windows setup script](http://boxstarter.org/package/url?https://raw.githubusercontent.com/Microsoft/Dev-Advocacy-Samples/master/dev_setup.ps1) based on the [Windows Dev Box Setup Scripts](https://github.com/Microsoft/windows-dev-box-setup-scripts) project. 
+
+Alternatively, follow the steps below to install prerequisites.
 
 1. [Enable the Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/install-win10). You'll be prommpted to restart your machine. Go ahead with that, and proceed to step 2.
 2. Install "Ubuntu" from the Microsoft Store. Initialize WSL by typing:
@@ -16,7 +18,7 @@ You can complete the first three steps of this tutorial with one click by using 
 4. Install Python and pip.
     - In your Ubuntu terminal type:
     
-            $ sudo apt install python3
+            $ sudo apt install python2.7
 
     - Verify you have python3 instaled by typing:
 
@@ -39,19 +41,25 @@ You can complete the first three steps of this tutorial with one click by using 
 
             $ sudo pip install pandas
 
-    - Install scikit-learn by typing:
-
-            $ sudo pip install -U scikit-learn
-    
-
 ## Tutorial
-### Navigate to the scikit-learn datasets
+### Create a User
+Create a user called 'ubuntu' that you will use throughout this tutorial. In you Ubuntu 18.04 terminal type the following:
 
-First, you'll want to begin working with the scikit-learn sample data sets. To navigate your dataset in WSL you'll need to be in the proper directory. You can do this with something similar to the following:
+        $ sudo adduser ubuntu
+        # Add 'ubuntu' to the sudo user group
+        $ sudo adduser ubuntu sudo
+        $ su - ubuntu
+
+### Download and Navigate to the scikit-learn datasets
+First, you'll want to begin working with the scikit-learn sample data sets. Install scikit-learn by typing the following into your Ubuntu 18.04 terminal:
+        
+        $ sudo pip install scikit-learn
+
+To navigate your dataset in WSL you'll need to be in the proper directory. You can do this with something similar to the following:
 
         $ cd /home
 
-        $ cd <Ubuntu username>
+        $ cd ubuntu
 
         $ cd .local/lib/python2.7/site-packages/sklearn/datasets/data
 
