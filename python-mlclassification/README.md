@@ -46,6 +46,7 @@ Alternatively, follow the steps below to install prerequisites.
 Create a user called 'ubuntu' that you will use throughout this tutorial. In you Ubuntu 18.04 terminal type the following:
 
         $ sudo adduser ubuntu
+        # Add 'ubuntu' to the sudo user group
         $ sudo adduser ubuntu sudo
         $ su - ubuntu
 
