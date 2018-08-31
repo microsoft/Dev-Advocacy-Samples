@@ -18,7 +18,7 @@ Alternatively, follow the steps below to install prerequisites.
 4. Install Python and pip.
     - In your Ubuntu terminal type:
     
-            $ sudo apt install python3
+            $ sudo apt install python2.7
 
     - Verify you have python3 instaled by typing:
 
