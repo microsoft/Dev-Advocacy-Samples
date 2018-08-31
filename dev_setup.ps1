@@ -40,7 +40,7 @@ Ubuntu1804 run apt upgrade -y
 ## Python tools
 Ubuntu1804 run apt install python2.7 python-pip -y 
 Ubuntu1804 run apt install python-numpy python-scipy -y
-Ubuntu1804 run pip install pandas -y
+Ubuntu1804 run pip install pandas
 
 write-host "Please continue with project setup by following the steps in the project readme"
 # You'll need to do this manually after creating a user
