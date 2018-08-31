@@ -15,6 +15,12 @@ write-host "Downloading git ..."
 choco install -y git -params '"/GitAndUnixToolsOnPath /WindowsTerminal"'
 write-host "Enabling WSL ..."
 choco install -y Microsoft-Windows-Subsystem-Linux -source windowsfeatures
+
+# We must reboot before installing the distro.  
+# Check if reboot wasn't performed automatically for us
+if (Test-PendingReboot)
+{ Invoke-Reboot }
+
 #--- Ubuntu ---
 write-host "Installing Ubuntu 18.04 ..."
 Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile ~/Ubuntu.appx -UseBasicParsing
@@ -34,6 +40,9 @@ Ubuntu1804 run apt upgrade -y
 ## Python tools
 Ubuntu1804 run apt install python3 python-pip -y 
 Ubuntu1804 run apt install python-numpy python-scipy pandas -y
+
+write-host "Please continue with project setup by following the steps in the project readme"
+# You'll need to do this manually after creating a user
 # Ubuntu1804 run pip install -U scikit-learn
 
 Enable-UAC
