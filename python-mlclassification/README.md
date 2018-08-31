@@ -39,19 +39,23 @@ You can complete the first three steps of this tutorial with one click by using 
 
             $ sudo pip install pandas
 
-    - Install scikit-learn by typing:
-
-            $ sudo pip install -U scikit-learn
-    
-
 ## Tutorial
-### Navigate to the scikit-learn datasets
+### Create a User
+Create a user called 'ubuntu' that you will use throughout this tutorial. In you Ubuntu 18.04 terminal type the following:
 
-First, you'll want to begin working with the scikit-learn sample data sets. To navigate your dataset in WSL you'll need to be in the proper directory. You can do this with something similar to the following:
+        $ sudo adduser ubuntu
+        $ su - ubuntu
+
+### Download and Navigate to the scikit-learn datasets
+First, you'll want to begin working with the scikit-learn sample data sets. Install scikit-learn by typing the following into your Ubuntu 18.04 terminal:
+        
+        $ sudo pip install scikit-learn
+
+To navigate your dataset in WSL you'll need to be in the proper directory. You can do this with something similar to the following:
 
         $ cd /home
 
-        $ cd <Ubuntu username>
+        $ cd ubuntu
 
         $ cd .local/lib/python2.7/site-packages/sklearn/datasets/data
 
