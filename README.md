@@ -2,12 +2,12 @@
 This GitHub repository contains code samples that demonstrate how you can use Windows for development.
 
 ## Samples
-The samples contain two tutorials:
+This repository contains two tutorials:
 
 - [App development with Node.js using VS Code and the Windows Subsystem for Linux (WSL)](https://github.com/Microsoft/Dev-Advocacy-Samples/tree/master/nodejs-shoppingcart)
 - [Machine learning with Python using WSL](https://github.com/Microsoft/Dev-Advocacy-Samples/tree/master/python-mlclassification)
 
-You can use this [one-click developer machine setup script](http://boxstarter.org/package/url?https://raw.githubusercontent.com/Microsoft/Dev-Advocacy-Samples/master/dev_setup.ps1) based on [this project](https://github.com/Microsoft/windows-dev-box-setup-scripts) to install the prequisites for the tutorials.
+You can use the [one-click machine setup script](http://boxstarter.org/package/url?https://raw.githubusercontent.com/Microsoft/Dev-Advocacy-Samples/master/dev_setup.ps1) based on [this project](https://github.com/Microsoft/windows-dev-box-setup-scripts) to install the prequisites for the tutorials.
 
 ## Contents
 Each sample has a README page with a set of instructions that will walk you through the tutorial. The instructions include:
