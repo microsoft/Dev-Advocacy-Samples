@@ -38,8 +38,8 @@ write-host "Installing tools inside the WSL distro..."
 Ubuntu1804 run apt update
 Ubuntu1804 run apt upgrade -y
 ## Python tools
-Ubuntu1804 run apt install python3 python-pip -y 
-Ubuntu1804 run apt install python-numpy python-scipy pandas -y
+Ubuntu1804 run apt install python2.7 python-pip -y 
+Ubuntu1804 run apt install python-numpy python-scipy  -y
 
 write-host "Please continue with project setup by following the steps in the project readme"
 # You'll need to do this manually after creating a user
