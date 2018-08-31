@@ -45,6 +45,7 @@ Alternatively, follow the steps below to install prerequisites.
 ### Create a User
 Create a user called 'ubuntu' that you will use throughout this tutorial. In you Ubuntu 18.04 terminal type the following:
 
+        $ sudo adduser ubuntu
         $ usermod -a -G sudo ubuntu
         $ su - ubuntu
 
