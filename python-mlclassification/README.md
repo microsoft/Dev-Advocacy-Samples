@@ -75,7 +75,7 @@ First, you'll want to begin working with the scikit-learn sample data sets. Inst
 sudo pip install scikit-learn
 ```
 
-To navigate your dataset in WSL you'll need to be in the proper directory. You can do this with something similar to the following:
+To navigate your dataset in WSL you'll need to be in the proper directory. You can do this with the following:
 
 ``` shell
 cd /home
