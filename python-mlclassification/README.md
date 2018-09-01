@@ -12,59 +12,76 @@ Alternatively, follow the steps below to install prerequisites.
 1. [Enable the Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/install-win10). You'll be prommpted to restart your machine. Go ahead with that, and proceed to step 2.
 2. Install "Ubuntu" from the Microsoft Store. Initialize WSL by typing:
 
-        $ sudo apt-get update
+``` shell
+sudo apt-get update
+```
 
 3. [Install Visual Studio Code for Windows](https://code.visualstudio.com/Download).
 4. Install Python and pip.
     - In your Ubuntu terminal type:
-    
-            $ sudo apt install python2.7
 
-    - Verify you have python3 instaled by typing:
+``` shell    
+sudo apt install python2.7
+```
 
-            $ python3 --version
-    
-    - Install pip (a Python package manager) by typing:
+- Verify you have python3 instaled by typing:
 
-            $ sudo apt install python-pip
-    
+``` shell
+python3 --version
+```
+
+- Install pip (a Python package manager) by typing:
+
+``` shell
+sudo apt install python-pip
+```
+
 5. Install scikit-learn and its dependencies.
     - Install NumPy by typing:
 
-            $ sudo apt-get install python-numpy
-    
-    - Install SciPy by typing:
+``` shell
+sudo apt-get install python-numpy
+```
 
-            $ sudo apt-get install python-scipy
+- Install SciPy by typing:
 
-    - Install pandas (a visualization tool) by typing:
+``` shell
+sudo apt-get install python-scipy
+```
 
-            $ sudo pip install pandas
+- Install pandas (a visualization tool) by typing:
+
+``` shell
+sudo pip install pandas
+```
 
 ## Tutorial
 ### Create a User
 Create a user called 'ubuntu' that you will use throughout this tutorial. In you Ubuntu 18.04 terminal type the following:
 
-        $ sudo adduser ubuntu
-        # Add 'ubuntu' to the sudo user group
-        $ sudo adduser ubuntu sudo
-        $ su - ubuntu
+``` shell
+sudo adduser ubuntu
+# Add 'ubuntu' to the sudo user group
+sudo adduser ubuntu sudo
+su - ubuntu
+```
+
 Note that when you create the user you will be promted for a password. Go ahead and create one. You'll also be propted for a few other details. You can skip filling those in by pressing "Enter".
 
 ### Download and Navigate to the scikit-learn datasets
 First, you'll want to begin working with the scikit-learn sample data sets. Install scikit-learn by typing the following into your Ubuntu 18.04 terminal:
-        
-        $ sudo pip install scikit-learn
+
+``` shell
+sudo pip install scikit-learn
+```
 
 To navigate your dataset in WSL you'll need to be in the proper directory. You can do this with something similar to the following:
 
-        $ cd /home
-
-        $ cd ubuntu
-
-        $ cd /usr/local/lib/python2.7/dist-packages/sklearn/datasets/data
-
-<Ubuntu username> will be the username that you set up when you initially installed Ubuntu.
+``` shell
+cd /home
+cd ubuntu
+cd /usr/local/lib/python2.7/dist-packages/sklearn/datasets/data
+```
 
 ### Working with the Python interpreter 
 
@@ -72,7 +89,9 @@ Now, within your data libraries you'll see many options such as boston house pri
 
 You can start a Python interpreter from the shell by doing the following:
 
-        $ python
+``` shell
+python
+```
 
 To know you're in the Python interpreter your shell will indicate a ">>>".
 
@@ -84,12 +103,14 @@ Let's start by loading the sample dataset. In your Ubuntu app, endusre you have 
 
 Now in the interpreter do the following:
 
-        from sklearn.datasets import load_iris
-        from sklearn.model_selection import train_test_split
+``` shell
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
 
-        iris_dataset = load_iris()
-        X, y = iris_dataset.data, iris_dataset.target
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=31)
+iris_dataset = load_iris()
+X, y = iris_dataset.data, iris_dataset.target
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=31)
+```
 
 The test_size of 0.25 means that 25% of the dataset is used for testing and the rest will be used for training.
 
@@ -98,13 +119,15 @@ The random_state is the degree by which the data is randomized.
 ### View the Data
 We can view the iris data in a variety of ways ultimately building on numpy which scikit-learn is built on top of. We will use pandas for a cleaner visualization.
 
-        import numpy as np
-        import pandas as pd
+``` shell
+import numpy as np
+import pandas as pd
 
-        df = pd.DataFrame(
-            data=np.c_[X,y], 
-            columns=iris_dataset['feature_names'] + ['target'])
-        df.sample(frac=0.1)
+df = pd.DataFrame(
+data=np.c_[X,y], 
+columns=iris_dataset['feature_names'] + ['target'])
+df.sample(frac=0.1)
+```
 
 The printed table shows us sepal length, sepal width, petal lenght, and petal width. These are the 4 feature measurements. The last column is the target which is the classification of the species as 0, 1, or 2.
 
@@ -113,41 +136,49 @@ Now that we have the raw dataset, we'll need to perform some pre-processing to b
 
 In the Python interpreter type the following:
 
-        from sklearn import preprocessing
+``` shell
+from sklearn import preprocessing
     
-        scaler = preprocessing.StandardScaler().fit(X_train)
-        X_train = scaler.transform(X_train)
-        X_test = scaler.transform(X_test)
+scaler = preprocessing.StandardScaler().fit(X_train)
+X_train = scaler.transform(X_train)
+X_test = scaler.transform(X_test)
+```
 
 The scaler sets all the iris measurement data to have zero mean and unit variance. That standardization will ensure our machine learning algorithm works well.
 
 ### Training and Generalization
 We are now going to train the model. Using scikit-learn we will train and test the model. We will train a Support Vector Machine (SVM) to classify the data using the accuracy_score.
 
-        from sklearn import svm
-        from sklearn.metrics import accuracy_score
+``` shell
+from sklearn import svm
+from sklearn.metrics import accuracy_score
 
-        clf = svm.SVC(gamma=0.001, C=100.)
-        clf.fit(X_train, y_train)
+clf = svm.SVC(gamma=0.001, C=100.)
+clf.fit(X_train, y_train)
         
-        y_pred_train = clf.predict(X_train)
-        y_pred_test = clf.predict(X_test)
+y_pred_train = clf.predict(X_train)
+y_pred_test = clf.predict(X_test)
         
-        acc_train = accuracy_score(y_train, y_pred_train) 
-        acc_test = accuracy_score(y_test, y_pred_test)
+acc_train = accuracy_score(y_train, y_pred_train) 
+acc_test = accuracy_score(y_test, y_pred_test)
+```
 
 In the above code snippet, we trained a SVM with a set of fixed hyper parameters gamma and C. Based on that, we will have about 97% accuracy for the training as test set. We can use scikit-learn to calculate the matrix for us using the following: 
 
-        from sklearn.metrics import confusion_matrix
+``` shell
+from sklearn.metrics import confusion_matrix
 
-        confusion_matrix = confusion_matrix(y_test,y_pred_test)
+confusion_matrix = confusion_matrix(y_test,y_pred_test)
+```
 
 And you'll see an array output as such:
 
+``` shell
 
     array([[11,  0,  0],
            [ 0, 15,  1],
            [ 0,  0, 11]])
+```
 
 What does this mean? Well, if we visualized this as a table you'd read it as:
 
