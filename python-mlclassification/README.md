@@ -5,7 +5,7 @@ This tutorial is a simple machine learning classification tutorial using Python,
 This demo will showcase how students can build a predictive model for machine learning classification using Python and the Windows Subsystem for Linux. They can use the popular scikit-learn toolset to build a model that uses flower iris data to classify the species type. Students can easily get started with machine learning in Linux on Windows using the Windows Subsystem for Linux with Ubuntu's command line Python interpreter.
 
 ## Prerequisites
-You can install the tools you'll need for this tutorial with one click by using the [Machine Learning Linux for Windows setup script](http://boxstarter.org/package/url?https://raw.githubusercontent.com/Microsoft/Dev-Advocacy-Samples/master/dev_setup.ps1) based on the [Windows Dev Box Setup Scripts](https://github.com/Microsoft/windows-dev-box-setup-scripts) project. 
+You can install the tools you'll need for this tutorial with one click by using the [Python tutorial setup script](http://boxstarter.org/package/url?https://raw.githubusercontent.com/Microsoft/Dev-Advocacy-Samples/master/python_tutorial_setup.ps1) based on the [Windows Dev Box Setup Scripts](https://github.com/Microsoft/windows-dev-box-setup-scripts) project. 
 
 Alternatively, follow the steps below to install prerequisites.
 
