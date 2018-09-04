@@ -14,7 +14,7 @@ You can install the tools you'll need for this tutorial with one click by using 
 
 After you run the script, restart your Ubuntu 18.04 app and install node by running the following:
 ```script
-npm install node
+nvm install node
 ```
 
 Verify you have successfully installed node:
@@ -26,7 +26,7 @@ Alternatively, follow the steps below to install prerequisites.
 
 1. Install Visual Studio Code for Windows using the installation instructions [here](https://code.visualstudio.com/Download). 
 2. Make sure WSL is set up on your machine. You can follow the installation instructions [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
-3. You need to have installed Node and NPM. Follow the instructions [here]( https://gist.github.com/micahgodbolt/8b9a338c8bab7bc147975646ea20826c).
+3. You need to have installed Node and NVM. Follow the instructions [here]( https://gist.github.com/micahgodbolt/8b9a338c8bab7bc147975646ea20826c).
 
 ## Tutorial
 1. Create a user called 'ubuntu' that you will use throughout this tutorial. In you Ubuntu 18.04 terminal type the following:
