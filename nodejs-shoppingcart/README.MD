@@ -12,11 +12,21 @@ Lastly we also included a workspace recommendation that enables you to install t
 ## Prerequisites
 You can install the tools you'll need for this tutorial with one click by using the [Node.js tutorial setup script](http://boxstarter.org/package/url?https://raw.githubusercontent.com/Microsoft/Dev-Advocacy-Samples/master/nodejs_tutorial_setup.ps1) based on the [Windows Dev Box Setup Scripts](https://github.com/Microsoft/windows-dev-box-setup-scripts) project. 
 
+After you run the script, restart your Ubuntu 18.04 app and install node by running the following:
+```script
+npm install node
+```
+
+Verify you have successfully installed node:
+```script
+node --version
+```
+
 Alternatively, follow the steps below to install prerequisites.
 
-1. Install Visual Studio Code for Windows [here](https://code.visualstudio.com/Download) 
+1. Install Visual Studio Code for Windows using the installation instructions [here](https://code.visualstudio.com/Download). 
 2. Make sure WSL is set up on your machine. You can follow the installation instructions [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
-3. You need to have installed Node and NPM. See https://gist.github.com/micahgodbolt/8b9a338c8bab7bc147975646ea20826c
+3. You need to have installed Node and NPM. Follow the instructions [here]( https://gist.github.com/micahgodbolt/8b9a338c8bab7bc147975646ea20826c).
 
 ## Tutorial
 1. Create a user called 'ubuntu' that you will use throughout this tutorial. In you Ubuntu 18.04 terminal type the following:
@@ -31,34 +41,24 @@ su - ubuntu
 
 Note that when you create the user you will be promted for a password. Go ahead and create one. You'll also be propted for a few other details. You can skip filling those in by pressing "Enter".
 
-2. Restart your Ubuntu 18.04 app and install node:
-``` shell
-nvm install node
-```
-Verify node is installed:
-``` shell
-node --version
-v7.4.0
-```
+2. Go to `/nodejs-shoppingcart`
 
-3. Go to `/nodejs-shoppingcart`
-
-4. Install dependencies
+3. Install dependencies
 ``` shell
 npm install
 ```
 
-5. Open this folder in VS Code from your bash terminal
+4. Open this folder in VS Code from your bash terminal
 ``` shell
 code .
 ```
 
-6. Open the Integrated Terminal in VS Code (make sure it's using bash/wsl). You can set your default shell by using the command palette (Ctrl + Shift + P) and typing "Terminal: Select Default Shell." From there select "WSL Bash." Now start the node server:
+5. Open the Integrated Terminal in VS Code (make sure it's using bash/wsl). You can set your default shell by using the command palette (Ctrl + Shift + P) and typing "Terminal: Select Default Shell." From there select "WSL Bash." Now start the node server:
 ``` shell
 npm start
 ```
 
-7. Visit the app on `http://localhost:3000`.
+6. Visit the app on `http://localhost:3000`.
 
 ## Debugging
 To debug the Node app running within WSL, we have included a `launch.json` that contains a debug configuration that's launching the Node process for you. This means that you have to stop/kill the existing Node process that you may have started from the integrated terminal. The debug configuration works by running `npm run debug`, which is a predefine npm script in the `package.json` which starts the node process with the debug `--inspect` flag. Notice that the `useWSL` property is set too, and this tells VS Code to use WSL, so the launched Node process runs within WSL and not Windows.
