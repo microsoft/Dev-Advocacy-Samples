@@ -27,7 +27,7 @@ sudo apt install python2.7
 - Verify you have python3 instaled by typing:
 
 ``` shell
-python3 --version
+python2.7 --version
 ```
 
 - Install pip (a Python package manager) by typing:
