@@ -129,7 +129,7 @@ columns=iris_dataset['feature_names'] + ['target'])
 df.sample(frac=0.1)
 ```
 
-The printed table shows us sepal length, sepal width, petal lenght, and petal width. These are the 4 feature measurements. The last column is the target which is the classification of the species as 0, 1, or 2.
+The printed table shows us sepal length, sepal width, petal length, and petal width. These are the 4 feature measurements. The last column is the target which is the classification of the species as 0, 1, or 2.
 
 ### Pre-Processing
 Now that we have the raw dataset, we'll need to perform some pre-processing to be able to use the dataset to train our model. We're working with a farily simple dataset, so we will only need to perform standardization on it.
@@ -153,7 +153,7 @@ We are now going to train the model. Using scikit-learn we will train and test t
 from sklearn import svm
 from sklearn.metrics import accuracy_score
 
-clf = svm.SVC(gamma=0.001, C=100.)
+clf = svm.SVC(gamma=0.001, C=100)
 clf.fit(X_train, y_train)
         
 y_pred_train = clf.predict(X_train)
@@ -169,6 +169,7 @@ In the above code snippet, we trained a SVM with a set of fixed hyper parameters
 from sklearn.metrics import confusion_matrix
 
 confusion_matrix = confusion_matrix(y_test,y_pred_test)
+print(confusion_matrix)
 ```
 
 And you'll see an array output as such:
